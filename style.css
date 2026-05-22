@@ -1,14 +1,16 @@
-body{
-    background-color: #blue;
+body {
+    background-color: #87ceeb;
     font-family: Arial, sans-serif;
 }
-h1{
+
+h1 {
     color: #32a852;
-    font-size: 48PX;
+    font-size: 48px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-p{
+
+p {
     color: #d35400;
     font-size: 18px;
     line-height: 1.6;
