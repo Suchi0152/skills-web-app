@@ -1,39 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audience Poll Winner Predictor</title>
+
+<style>
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#2b5876,#4e4376);
+}
+
+.container{
+background:white;
+padding:30px;
+width:400px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 15px gray;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:blue;
+color:white;
+border:none;
+font-size:18px;
+cursor:pointer;
+}
+
+#result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+line-height:35px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="card">
-      <h1> Kanigelpula Suchitra</h1>
-      <h3>Software Engineer | B.Tech Student</h3>
+<h1>🏆 Audience Poll Winner Predictor</h1>
 
-      <p class="intro">
-        Passionate about python, c, Flutter, and flask.
-      </p>
+<input type="text" id="team1" placeholder="Enter Team 1">
 
-      <div class="info">
-        <p><b>Skills:</b> python, c, Flutter, and flask</p>
-        <p><b>Certifications:</b> Software Engineering, AWS</p>
-        <p><b>Email:</b> kanigelpulasuchitra@gmail.com</p>
-        <p><b>GitHub:</b> https://github.com/Suchi0152</p>
-      </div>
+<input type="number" id="vote1" placeholder="Audience Votes">
 
-      <div class="buttons">
-        <a href="https://github.com/" target="_blank">GitHub</a>
-      </div>
-    </div>
+<input type="text" id="team2" placeholder="Enter Team 2">
 
-   
+<input type="number" id="vote2" placeholder="Audience Votes">
 
-  </div>
+<button onclick="checkResult()">Check Result</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function checkResult(){
+
+let team1=document.getElementById("team1").value;
+let vote1=Number(document.getElementById("vote1").value);
+
+let team2=document.getElementById("team2").value;
+let vote2=Number(document.getElementById("vote2").value);
+
+let result=document.getElementById("result");
+
+if(team1==="" || team2==="" || !vote1 || !vote2){
+result.innerHTML="Please fill all fields";
+return;
+}
+
+if(vote1>vote2){
+
+result.innerHTML=
+"🏆 Winner: "+team1+"<br>"+
+"❌ Loser: "+team2+"<br>"+
+"Audience Support: "+vote1+"%";
+
+}
+
+else if(vote2>vote1){
+
+result.innerHTML=
+"🏆 Winner: "+team2+"<br>"+
+"❌ Loser: "+team1+"<br>"+
+"Audience Support: "+vote2+"%";
+
+}
+
+else{
+
+result.innerHTML=
+"🤝 Match Tie<br>"+
+"Both received "+vote1+"%";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
