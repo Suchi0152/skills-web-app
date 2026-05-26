@@ -1,0 +1,36 @@
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:Arial;
+background:#e6f2ff;
+}
+
+.container{
+background:white;
+padding:30px;
+width:400px;
+text-align:center;
+border-radius:15px;
+box-shadow:0px 0px 10px gray;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin:10px 0;
+}
+
+button{
+background:blue;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+#result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
